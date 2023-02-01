@@ -13,7 +13,7 @@ class NonEmptyList<E> extends IterableMixin<E>{
   NonEmptyList._(this._values);
 
   factory NonEmptyList.unsafe(Iterable<E> values) {
-    if (values.isEmpty) ArgumentError('list should be nonEmpty');
+    if (values.isEmpty) throw ArgumentError('list should be nonEmpty');
     return NonEmptyList._(values.toList());
   }
 
